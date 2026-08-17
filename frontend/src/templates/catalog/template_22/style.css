@@ -1,0 +1,114 @@
+/* style.css — template_22 (Floral Botanical Sidebar). Visual skin only. */
+
+.bd-template22 {
+  position: relative;
+  width: 735px;
+  min-height: 1040px;
+  margin: 0 auto;
+  background: #ffffff;
+  box-sizing: border-box;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #3a2b2b;
+  overflow: visible;
+}
+
+.bd-template22 .bd22-flourish {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  opacity: 0.55;
+  pointer-events: none;
+}
+.bd-template22 .bd22-flourish-tl {
+  top: -70px;
+  left: -70px;
+  background: radial-gradient(circle at 60% 60%, #f3d2e0 0%, transparent 70%),
+              radial-gradient(circle at 30% 30%, #e3c6ea 0%, transparent 65%);
+}
+.bd-template22 .bd22-flourish-br {
+  bottom: -70px;
+  right: -70px;
+  background: radial-gradient(circle at 40% 40%, #f3d2e0 0%, transparent 70%),
+              radial-gradient(circle at 70% 70%, #e3c6ea 0%, transparent 65%);
+}
+
+.bd-template22 .bd22-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 26px;
+  padding: 46px 44px;
+}
+
+.bd-template22 .bd22-photo-col {
+  flex: 0 0 auto;
+  width: 190px;
+}
+.bd-template22 .bd22-photo {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(58, 43, 43, 0.18);
+}
+.bd-template22 .bd22-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 240px;
+  border-radius: 6px;
+  background: #f6ecef;
+  color: #b58b96;
+  font-size: 12px;
+}
+
+.bd-template22 .bd22-content {
+  flex: 1;
+  min-width: 0;
+  padding-top: 8px;
+}
+
+.bd-template22 .bd22-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: #7a2e42;
+  letter-spacing: 0.4px;
+}
+.bd-template22 .bd22-rule {
+  width: 70px;
+  height: 2px;
+  background: #d79cb3;
+  margin: 12px 0 22px;
+}
+
+.bd-template22 .bd22-group-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #7a2e42;
+  letter-spacing: 0.6px;
+  margin: 20px 0 10px;
+}
+.bd-template22 .bd22-group:first-of-type ~ .bd22-group-title,
+.bd-template22 .bd22-group-title:first-child { margin-top: 0; }
+
+.bd-template22 .bd22-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 4px;
+}
+.bd-template22 .bd22-line {
+  display: flex;
+  gap: 5px;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+.bd-template22 .bd22-label { font-weight: 700; color: #3a2b2b; }
+.bd-template22 .bd22-colon { color: #9c8189; }
+.bd-template22 .bd22-value { color: #3a2b2b; }
+
+@media print {
+  .bd-template22 { box-shadow: none; }
+}

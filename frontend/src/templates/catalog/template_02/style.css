@@ -1,0 +1,149 @@
+/* style.css — template_02 (Vedic Sage with Sketch-Matched White Vine) */
+
+.bd-template02 {
+  position: relative;
+  width: 735px;
+  min-height: 1040px;
+  margin: 0 auto;
+  padding: 40px 40px 40px 65px;
+  background: #edf4ee;
+  border: 1px solid #d0e0d5;
+  box-sizing: border-box;
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #1b3d2b;
+  overflow: hidden;
+}
+
+/* Left Stripe with White Floral Vine (Exact Sketch Trace) */
+.bd-template02 .bd02-left-stripe {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 36px;
+  background-color: #1b432c;
+
+  /* Realistic 5-petal blossom vine in green & white: dark green ground,
+     white frame lines, wavy stem, bigger clean flowers with dark
+     bullseye centers, simple paired leaves between blooms
+  */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 36 100'%3E%3Crect width='36' height='100' fill='%231b432c'/%3E%3Crect x='0' y='0' width='2' height='100' fill='%23ffffff'/%3E%3Crect x='34' y='0' width='2' height='100' fill='%23ffffff'/%3E%3Cpath d='M18,0 Q15,25 18,50 Q21,75 18,100' stroke='%23ffffff' stroke-width='1.3' fill='none'/%3E%3Cdefs%3E%3Cpath id='pt' d='M0,-1 C3.2,-3 4,-7.5 2,-11.5 C1,-13 -1,-13 -2,-11.5 C-4,-7.5 -3.2,-3 0,-1 Z'/%3E%3Cg id='fl'%3E%3Cg fill='%23ffffff'%3E%3Cuse xlink:href='%23pt' href='%23pt' transform='rotate(0)'/%3E%3Cuse xlink:href='%23pt' href='%23pt' transform='rotate(72)'/%3E%3Cuse xlink:href='%23pt' href='%23pt' transform='rotate(144)'/%3E%3Cuse xlink:href='%23pt' href='%23pt' transform='rotate(216)'/%3E%3Cuse xlink:href='%23pt' href='%23pt' transform='rotate(288)'/%3E%3C/g%3E%3Ccircle r='2.3' fill='%231b432c'/%3E%3Ccircle r='2.3' fill='none' stroke='%23ffffff' stroke-width='0.6'/%3E%3C/g%3E%3Cpath id='lf' d='M0,0 C3.2,-3.2 3.6,-9 0,-14.5 C-3.6,-9 -3.2,-3.2 0,0 Z'/%3E%3C/defs%3E%3Cuse xlink:href='%23fl' href='%23fl' transform='translate(17,25) scale(0.9)'/%3E%3Cuse xlink:href='%23fl' href='%23fl' transform='translate(19,75) scale(0.9)'/%3E%3Cuse xlink:href='%23lf' href='%23lf' transform='translate(18,50) rotate(-55) scale(0.85)' fill='%23ffffff'/%3E%3Cuse xlink:href='%23lf' href='%23lf' transform='translate(18,50) rotate(235) scale(0.85)' fill='%23ffffff'/%3E%3C/svg%3E");
+
+  background-repeat: repeat-y;
+  background-size: 36px 100px;
+}
+
+/* Header Elements */
+.bd-template02 .bd02-invocation {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #1b432c;
+  margin-top: 10px;
+}
+
+.bd-template02 .bd02-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #1b432c;
+  margin: 8px 0;
+}
+
+.bd-template02 .bd02-title-rule {
+  height: 2px;
+  background: #1b432c;
+  width: 80%;
+  margin: 0 auto 24px;
+}
+
+/* Photo Wrap */
+.bd-template02 .bd02-photo-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.bd-template02 .bd02-photo {
+  width: 130px;
+  height: 155px;
+  object-fit: cover;
+  border: 1.5px solid #1b432c;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+.bd-template02 .bd02-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1b432c;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  background: #e1ede4;
+}
+
+/* Section Header */
+.bd-template02 .bd02-section-title {
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+  color: #1b432c;
+  background: #dceada;
+  padding: 6px 12px;
+  border-left: 5px solid #1b432c;
+  margin: 22px auto 12px;
+  max-width: 580px;
+  border-radius: 2px;
+}
+
+/* Section Container & Rows */
+.bd-template02 .bd02-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 580px;
+  margin: 0 auto 16px;
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 6px 14px;
+  border: 1px solid #d4e2d8;
+}
+
+.bd-template02 .bd02-row {
+  display: grid;
+  grid-template-columns: 180px 20px 1fr;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 6px 0;
+  border-bottom: 1px solid #edf4ee;
+}
+
+.bd-template02 .bd02-row:last-child {
+  border-bottom: none;
+}
+
+.bd-template02 .bd02-label {
+  font-weight: bold;
+  color: #1b432c;
+}
+
+.bd-template02 .bd02-colon {
+  display: inline-block;
+  font-weight: bold;
+  color: #1b432c;
+}
+
+.bd-template02 .bd02-value {
+  font-weight: 500;
+  color: #11261b;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+@media print {
+  .bd-template02 {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

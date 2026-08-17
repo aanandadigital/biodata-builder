@@ -1,0 +1,95 @@
+/* style.css — template_03 (Royal Maroon). Visual skin only. */
+
+.bd-template03 {
+  position: relative;
+  width: 735px;
+  min-height: 1040px;
+  margin: 0 auto;
+  padding: 0 48px 40px;
+  background: #5c0f14;
+  box-sizing: border-box;
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #f3e6c8;
+  overflow: visible;
+}
+
+.bd-template03 .bd03-border-top,
+.bd-template03 .bd03-border-bottom {
+  height: 34px;
+  margin: 0 -48px 18px;
+  background-image: repeating-linear-gradient(
+    135deg,
+    #c99a3f 0px, #c99a3f 10px,
+    #5c0f14 10px, #5c0f14 20px
+  );
+  opacity: 0.9;
+}
+.bd-template03 .bd03-border-bottom { margin: 18px -48px 0; }
+
+.bd-template03 .bd03-invocation {
+  text-align: center;
+  color: #e9c979;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 22px;
+}
+
+.bd-template03 .bd03-top-row {
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  gap: 24px;
+  align-items: start;
+}
+
+.bd-template03 .bd03-photo-wrap { display: flex; justify-content: center; align-items: flex-start; }
+.bd-template03 .bd03-photo {
+  width: 150px;
+  height: 190px;
+  object-fit: cover;
+  border: 3px solid #e9c979;
+  border-radius: 4px;
+}
+.bd-template03 .bd03-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d8b98a;
+  font-size: 13px;
+  background: rgba(233, 201, 121, 0.12);
+}
+
+.bd-template03 .bd03-section-title {
+  color: #e9c979;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 24px 0 12px;
+  letter-spacing: 0.02em;
+}
+
+.bd-template03 .bd03-section {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+/* The "overflow" personal fields (beyond the 6 shown beside the photo)
+   render as a second, title-less .bd03-section right after .bd03-top-row.
+   Without this, that row sits flush against the last photo-row field with
+   no gap, so it visually collides with it (e.g. Height / Gotra bug). */
+.bd-template03 .bd03-top-row + .bd03-section {
+  margin-top: 9px;
+}
+
+.bd-template03 .bd03-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.bd-template03 .bd03-label { font-weight: 700; color: #e9c979; }
+.bd-template03 .bd03-value { color: #f7ecd6; }
+
+@media print {
+  .bd-template03 { box-shadow: none; }
+}

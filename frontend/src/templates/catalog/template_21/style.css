@@ -1,0 +1,107 @@
+/* style.css — template_21 (Vintage Parchment Scroll). Visual skin only. */
+
+.bd-template21 {
+  position: relative;
+  width: 735px;
+  min-height: 1040px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #3d2e1f;
+  background:
+    radial-gradient(ellipse at 20% 15%, rgba(180, 150, 100, 0.10), transparent 40%),
+    radial-gradient(ellipse at 85% 80%, rgba(150, 120, 80, 0.12), transparent 45%),
+    #f1e6cf;
+  border: 10px solid #f1e6cf;
+  outline: 2px solid #a9895c;
+  outline-offset: -14px;
+}
+
+.bd-template21 .bd21-page {
+  display: flex;
+  gap: 22px;
+  padding: 30px 34px 34px;
+}
+
+.bd-template21 .bd21-photo-col {
+  flex: 0 0 auto;
+  width: 168px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.bd-template21 .bd21-photo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(61, 46, 31, 0.25);
+}
+.bd-template21 .bd21-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e6d6b4;
+  color: #8a7350;
+  font-size: 12px;
+}
+
+.bd-template21 .bd21-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.bd-template21 .bd21-invocation {
+  text-align: center;
+  font-size: 12.5px;
+  letter-spacing: 1px;
+  color: #7a5c33;
+  margin-bottom: 8px;
+}
+
+.bd-template21 .bd21-name-banner {
+  background: #6b4423;
+  color: #fdf3df;
+  text-align: center;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+.bd-template21 .bd21-name {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.bd-template21 .bd21-dob {
+  font-size: 14px;
+  margin-top: 4px;
+  color: #f0dfc0;
+}
+
+.bd-template21 .bd21-section { margin-bottom: 14px; }
+.bd-template21 .bd21-bar {
+  background: #8a5a2e;
+  color: #fdf3df;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  padding: 6px 12px;
+  margin-bottom: 8px;
+}
+.bd-template21 .bd21-section-body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 4px;
+}
+.bd-template21 .bd21-line {
+  display: flex;
+  gap: 6px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.bd-template21 .bd21-label { color: #6b4423; font-weight: 700; min-width: 130px; }
+.bd-template21 .bd21-value { color: #3d2e1f; }
+
+@media print {
+  .bd-template21 { box-shadow: none; }
+}

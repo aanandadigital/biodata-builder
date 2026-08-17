@@ -1,0 +1,113 @@
+/* style.css — template_15 (Noor Mahal Beliefs). Visual skin only. */
+
+.bd-template15 {
+  position: relative;
+  width: 735px;
+  min-height: 1040px;
+  margin: 0 auto;
+  padding: 44px 48px;
+  background: #fffaf3;
+  box-sizing: border-box;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #3a2f27;
+}
+
+.bd-template15 .bd15-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 24px;
+  margin-bottom: 26px;
+  border-bottom: 3px solid #c9973f;
+}
+
+.bd-template15 .bd15-photo-wrap { flex: 0 0 auto; }
+.bd-template15 .bd15-photo {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #c9973f;
+  box-shadow: 0 0 0 4px #fff3de;
+}
+.bd-template15 .bd15-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #fff3de;
+  color: #a9843f;
+  font-size: 12px;
+  border: 4px solid #c9973f;
+}
+
+.bd-template15 .bd15-header-text { flex: 1; min-width: 0; }
+.bd-template15 .bd15-name {
+  font-size: 26px;
+  font-weight: 700;
+  color: #6b3f1d;
+  margin-bottom: 6px;
+  letter-spacing: 0.2px;
+}
+.bd-template15 .bd15-subline {
+  font-size: 13.5px;
+  color: #6b5c4e;
+  line-height: 1.6;
+}
+
+.bd-template15 .bd15-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.bd-template15 .bd15-card {
+  background: #ffffff;
+  border: 1px solid #f0e2c8;
+  border-radius: 10px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 3px rgba(107, 63, 29, 0.06);
+}
+
+.bd-template15 .bd15-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #c9973f;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bd-template15 .bd15-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.bd-template15 .bd15-bullet {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #3a2f27;
+}
+.bd-template15 .bd15-bullet-label {
+  font-weight: 700;
+  color: #6b3f1d;
+  margin-right: 4px;
+}
+
+.bd-template15 .bd15-paragraph {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #3a2f27;
+  margin: 0;
+}
+
+@media print {
+  .bd-template15 { box-shadow: none; }
+}

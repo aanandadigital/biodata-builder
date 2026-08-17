@@ -1,0 +1,96 @@
+/* style.css — template_23 (Split Header Duo). Visual skin only. */
+
+.bd-template23 {
+  position: relative;
+  width: 735px;
+  min-height: 1040px;
+  margin: 0 auto;
+  background: #ffffff;
+  box-sizing: border-box;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #3a2f2f;
+  overflow: visible;
+}
+
+.bd-template23 .bd23-header {
+  display: flex;
+  height: 220px;
+}
+.bd-template23 .bd23-name-panel {
+  flex: 1;
+  min-width: 0;
+  background: #f3d6e0;
+  display: flex;
+  align-items: center;
+  padding: 0 36px;
+}
+.bd-template23 .bd23-name {
+  font-size: 34px;
+  font-weight: 800;
+  color: #6b2c42;
+  line-height: 1.15;
+}
+
+.bd-template23 .bd23-photo-wrap {
+  position: relative;
+  flex: 0 0 auto;
+  width: 320px;
+  height: 220px;
+}
+.bd-template23 .bd23-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bd-template23 .bd23-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #ece0e3;
+  color: #9c7c85;
+  font-size: 12px;
+}
+.bd-template23 .bd23-contact-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 20, 22, 0.62);
+  color: #ffffff;
+  font-size: 11.5px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bd-template23 .bd23-body {
+  display: flex;
+  gap: 0;
+  padding: 30px 36px 36px;
+}
+.bd-template23 .bd23-col { flex: 1; min-width: 0; }
+.bd-template23 .bd23-col:first-child { padding-right: 24px; border-right: 1px solid #eee0e4; }
+.bd-template23 .bd23-col:last-child { padding-left: 24px; }
+
+.bd-template23 .bd23-col-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #6b2c42;
+  letter-spacing: 0.3px;
+  margin: 0 0 14px;
+}
+
+.bd-template23 .bd23-line {
+  font-size: 12.5px;
+  line-height: 1.85;
+  color: #3a2f2f;
+}
+.bd-template23 .bd23-label { font-weight: 700; color: #6b2c42; }
+.bd-template23 .bd23-value { color: #3a2f2f; }
+
+@media print {
+  .bd-template23 { box-shadow: none; }
+}

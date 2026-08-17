@@ -1,0 +1,77 @@
+/* style.css — template_13 (Chattogram Ornate). Visual skin only. */
+
+.bd-template13 {
+  position: relative;
+  width: 735px;
+  min-height: 1040px;
+  margin: 0 auto;
+  padding: 46px 50px;
+  background: #fdfcf6;
+  border: 14px solid #0d6b6b;
+  outline: 3px solid #c9a44c;
+  outline-offset: -20px;
+  box-sizing: border-box;
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #2c2418;
+}
+
+.bd-template13 .bd13-photo-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.bd-template13 .bd13-photo {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #c9a44c;
+}
+.bd-template13 .bd13-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8a7a55;
+  font-size: 13px;
+  background: rgba(201, 164, 76, 0.15);
+  border-radius: 50%;
+}
+
+.bd-template13 .bd13-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.bd-template13 .bd13-section-title {
+  color: #0d6b6b;
+  font-size: 17px;
+  font-weight: 700;
+  margin: 18px 0 10px;
+  border-bottom: 2px solid #c9a44c;
+  padding-bottom: 5px;
+}
+.bd-template13 .bd13-col .bd13-section-title:first-child { margin-top: 0; }
+
+.bd-template13 .bd13-section {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.bd-template13 .bd13-row {
+  display: grid;
+  grid-template-columns: 105px 12px 1fr;
+  font-size: 13.5px;
+  line-height: 1.4;
+}
+.bd-template13 .bd13-label { font-weight: 700; color: #0d6b6b; }
+.bd-template13 .bd13-value { color: #2c2418; }
+.bd-template13 .bd13-paragraph {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #2c2418;
+}
+
+@media print {
+  .bd-template13 { box-shadow: none; }
+}

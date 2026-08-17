@@ -1,0 +1,6 @@
+{
+  "name": "biodata-builder-frontend",
+  "private": true,
+  "type": "module",
+  "comment": "No build step/dependencies — this just tells Node.js (used by ../backend/render/render.mjs to reuse these template files server-side) to treat every .js file under here as an ES module, matching how the browser already loads them via <script type=module>. Purely a Node-resolution signal; has no effect on the static site itself."
+}

@@ -1,0 +1,193 @@
+/* style.css — template_16 (Blush Timeline Scholar). Visual skin only. */
+
+.bd-template16 {
+  position: relative;
+  width: 735px;
+  min-height: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  background: #ffffff;
+  box-sizing: border-box;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #2b2320;
+  overflow: visible;
+}
+
+.bd-template16 .bd16-sidebar {
+  background: #f6cdd4;
+  padding: 34px 22px;
+  box-sizing: border-box;
+}
+
+.bd-template16 .bd16-photo-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+.bd-template16 .bd16-photo {
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+.bd-template16 .bd16-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9a5f68;
+  font-size: 12px;
+  background: #ffffff;
+}
+
+.bd-template16 .bd16-block { margin-bottom: 26px; }
+.bd-template16 .bd16-block-title {
+  background: #241d1c;
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 0 0 12px;
+}
+
+.bd-template16 .bd16-contact-item {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #3a2e2a;
+  word-break: break-word;
+}
+
+.bd-template16 .bd16-list {
+  list-style: disc;
+  margin: 0;
+  padding-left: 16px;
+}
+.bd-template16 .bd16-list li {
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: #3a2e2a;
+}
+.bd-template16 .bd16-empty { font-size: 12px; color: #9a5f68; }
+
+.bd-template16 .bd16-main {
+  padding: 40px 40px 40px 30px;
+  box-sizing: border-box;
+}
+
+.bd-template16 .bd16-name {
+  font-size: 30px;
+  font-weight: 800;
+  color: #1e1815;
+  letter-spacing: 0.5px;
+}
+.bd-template16 .bd16-tagline {
+  font-size: 13.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #d16b7c;
+  font-weight: 600;
+  margin-top: 4px;
+}
+.bd-template16 .bd16-rule {
+  height: 2px;
+  background: #f0d3d8;
+  margin: 18px 0 22px;
+}
+
+.bd-template16 .bd16-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 22px 0 12px;
+}
+.bd-template16 .bd16-heading:first-of-type { margin-top: 0; }
+.bd-template16 .bd16-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #f6cdd4;
+  color: #b5495c;
+  font-size: 13px;
+}
+.bd-template16 .bd16-heading h2 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e1815;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.bd-template16 .bd16-about {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #3a2e2a;
+  margin: 0 0 6px;
+}
+
+.bd-template16 .bd16-timeline {
+  border-left: 2px solid #f0d3d8;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.bd-template16 .bd16-timeline-item { position: relative; }
+.bd-template16 .bd16-timeline-dot {
+  position: absolute;
+  left: -23px;
+  top: 4px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #d16b7c;
+}
+.bd-template16 .bd16-timeline-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #b5495c;
+}
+.bd-template16 .bd16-timeline-detail {
+  font-size: 12.5px;
+  color: #3a2e2a;
+}
+
+.bd-template16 .bd16-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.bd-template16 .bd16-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.bd-template16 .bd16-row-label { font-weight: 700; color: #6b4d52; }
+.bd-template16 .bd16-row-value { color: #2b2320; }
+
+.bd-template16 .bd16-sign-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 18px;
+  font-size: 12.5px;
+  color: #3a2e2a;
+}
+.bd-template16 .bd16-signature {
+  font-family: "Brush Script MT", cursive;
+  font-size: 22px;
+  color: #b5495c;
+}
+
+@media print {
+  .bd-template16 { box-shadow: none; }
+}

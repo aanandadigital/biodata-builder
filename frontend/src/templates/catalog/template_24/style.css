@@ -1,0 +1,87 @@
+/* style.css — template_24 (Coral Panel Profile). Visual skin only. */
+
+.bd-template24 {
+  position: relative;
+  width: 735px;
+  min-height: 1040px;
+  margin: 0 auto;
+  display: flex;
+  background: #ffffff;
+  box-sizing: border-box;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #2f2626;
+  overflow: visible;
+}
+
+.bd-template24 .bd24-photo-col {
+  flex: 0 0 auto;
+  width: 250px;
+  padding: 30px 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bd-template24 .bd24-photo {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 8px 18px rgba(47, 32, 32, 0.18);
+}
+.bd-template24 .bd24-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 260px;
+  border-radius: 4px;
+  background: #f2eeee;
+  color: #a89a9a;
+  font-size: 12px;
+}
+.bd-template24 .bd24-photo-name {
+  margin-top: 18px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #3d5a6c;
+  text-align: center;
+}
+
+.bd-template24 .bd24-panel {
+  flex: 1;
+  min-width: 0;
+  background: linear-gradient(160deg, #e8636f 0%, #d84a58 100%);
+  padding: 34px 36px;
+  box-sizing: border-box;
+  color: #fff5f0;
+  border-left: 3px solid #d4af37;
+}
+
+.bd-template24 .bd24-pill {
+  display: inline-block;
+  background: #ffffff;
+  color: #7f1d1d;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin: 18px 0 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.bd-template24 .bd24-pill:first-child { margin-top: 0; }
+
+.bd-template24 .bd24-block {
+  font-size: 12.5px;
+  line-height: 1.8;
+  color: #fff5f0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.bd-template24 .bd24-label { font-weight: 700; color: #ffe9c7; }
+
+@media print {
+  .bd-template24 { box-shadow: none; }
+}

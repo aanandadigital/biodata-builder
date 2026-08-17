@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0f172a" />
+<title>Biodata Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+  // Apply saved theme before first paint to avoid a light/dark flash.
+  (function () {
+    try {
+      var saved = localStorage.getItem("aananda-theme");
+      var theme = saved || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <img class="brand-mark" src="src/assets/aananda-logo-mark.png" alt="Aananda Digital" />
+      <span class="brand-text">Aananda Digital<span class="brand-sub">Biodata Builder</span></span>
+    </div>
+
+    <nav class="app-nav" aria-label="Primary">
+      <a href="index.html#galleryGrid" class="app-nav-link">Templates</a>
+      <a href="index.html#features" class="app-nav-link">Features</a>
+      <a href="index.html#how-it-works" class="app-nav-link">How It Works</a>
+      <a href="legal/contact.html" class="app-nav-link">Contact</a>
+    </nav>
+
+    <div class="app-header-actions">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="#galleryGrid" class="btn btn-header-cta">Browse Templates</a>
+      <button type="button" id="navToggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="icon-hamburger" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <a href="index.html#galleryGrid" class="mobile-menu-link">Templates</a>
+      <a href="index.html#features" class="mobile-menu-link">Features</a>
+      <a href="index.html#how-it-works" class="mobile-menu-link">How It Works</a>
+      <a href="legal/contact.html" class="mobile-menu-link">Contact</a>
+      <div class="mobile-menu-row">
+        <a href="index.html#galleryGrid" class="btn btn-header-cta mobile-menu-cta">Browse Templates</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section id="view-gallery">
+
+      <section class="hero" id="hero">
+        <div class="hero-copy">
+          <span class="hero-eyebrow">&#10022; A Venture of Aananda Creations</span>
+          <h1 class="hero-title">Create a biodata that makes the <em>right</em> first impression.</h1>
+          <p class="hero-subtitle">
+            Beautiful, print-ready biodata designs for marriage proposals and professional
+            profiles — fill in your details once, preview live, and download a polished PDF in minutes.
+          </p>
+          <div class="hero-cta-row">
+            <a href="#galleryGrid" class="btn btn-hero-primary">Create Biodata Now</a>
+            <a href="#galleryGrid" class="btn btn-hero-secondary">Browse Templates</a>
+          </div>
+          <div class="hero-trust-badges">
+            <div class="trust-badge"><span class="trust-badge-icon">&#10003;</span> 24 premium templates</div>
+            <div class="trust-badge"><span class="trust-badge-icon">&#10003;</span> Instant live preview</div>
+            <div class="trust-badge"><span class="trust-badge-icon">&#10003;</span> Print-ready PDF export</div>
+            <div class="trust-badge"><span class="trust-badge-icon">&#10003;</span> Secure &amp; private</div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-visual-glow"></div>
+          <div class="hero-logo-showcase" id="heroLogoShowcase" role="button" tabindex="0" aria-label="Aananda Digital">
+            <video class="hero-logo-video" data-theme-video="dark"
+                   src="src/assets/dark.mp4" poster="src/assets/aananda-logo-mark.png"
+                   autoplay muted loop playsinline preload="auto"></video>
+            <video class="hero-logo-video" data-theme-video="light"
+                   src="src/assets/light.mp4" poster="src/assets/aananda-logo-mark.png"
+                   autoplay muted loop playsinline preload="auto"></video>
+            <span class="hero-logo-pulse-ring"></span>
+          </div>
+          <div class="hero-chip hero-chip-top">
+            <span class="hero-chip-icon">&#10003;</span> Print-ready PDF
+          </div>
+          <div class="hero-chip hero-chip-bottom">
+            <span class="hero-chip-icon">&#9733;</span> 24 curated templates
+          </div>
+        </div>
+      </section>
+
+      <div class="gallery-heading" id="galleryHeading">
+        <h2>Choose a template</h2>
+        <p class="gallery-subtitle">Pick a style, fill in your details, preview live, then download.</p>
+      </div>
+      <div id="galleryGrid"></div>
+
+      <section id="features" class="features-section">
+        <div class="gallery-heading">
+          <h2>Why Aananda Digital</h2>
+          <p class="gallery-subtitle">Everything you need to put together a biodata you're proud of.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-card-icon">&#127912;</div>
+            <h3>24 premium templates</h3>
+            <p>Traditional marriage designs across communities, plus clean professional/general layouts — pick the style that fits.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon">&#9889;</div>
+            <h3>Instant live preview</h3>
+            <p>See your biodata update in real time as you type — no guessing what the final PDF will look like.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon">&#128196;</div>
+            <h3>Print-ready PDF export</h3>
+            <p>Download a polished, high-resolution PDF that's ready to print or share digitally in minutes.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon">&#128274;</div>
+            <h3>Secure &amp; private</h3>
+            <p>Your draft stays in your own browser until checkout, and payments are handled securely by Razorpay.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="how-it-works-section">
+        <div class="gallery-heading">
+          <h2>How it works</h2>
+          <p class="gallery-subtitle">Four simple steps from blank page to finished biodata.</p>
+        </div>
+        <div class="how-it-works-steps">
+          <div class="how-step">
+            <div class="how-step-num">1</div>
+            <h3>Choose a template</h3>
+            <p>Browse the gallery and pick a design that matches your style.</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num">2</div>
+            <h3>Fill in your details</h3>
+            <p>Enter your information and upload photos — the preview updates as you go.</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num">3</div>
+            <h3>Preview &amp; refine</h3>
+            <p>Adjust sections, photos, and pages until it looks exactly right.</p>
+          </div>
+          <div class="how-step">
+            <div class="how-step-num">4</div>
+            <h3>Pay &amp; download</h3>
+            <p>Complete a secure payment and get your print-ready PDF emailed to you instantly.</p>
+          </div>
+        </div>
+      </section>
+
+    </section>
+
+    <section id="view-builder" hidden>
+      <div class="top-actions">
+        <div class="top-actions-left">
+          <button type="button" id="backBtn" class="btn btn-secondary">&larr; Back to templates</button>
+          <button type="button" id="restartBtn" class="btn btn-secondary btn-danger-outline">&#8635; Start over</button>
+        </div>
+        <div class="top-actions-right">
+          <div id="downloadBlockReason" class="field-error download-block-reason"></div>
+          <div class="checkout-consent">
+            By clicking "Pay &amp; Download" you agree to our
+            <a href="legal/terms-of-service.html" target="_blank" rel="noopener">Terms of Service</a>
+            and <a href="legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.
+          </div>
+          <button type="button" id="shareBtn" class="btn btn-secondary">Share preview</button>
+          <button type="button" id="downloadBtn" class="btn">Pay &amp; Download</button>
+        </div>
+      </div>
+
+      <div class="builder-layout">
+        <div class="form-panel">
+          <fieldset class="form-section">
+            <legend>Contact (for delivery)</legend>
+            <div class="contact-row">
+              <div class="form-field">
+                <label for="f_fullName">Full Name *</label>
+                <input id="f_fullName" type="text" />
+              </div>
+              <div class="form-field">
+                <label for="f_email">Email *</label>
+                <input id="f_email" type="email" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="f_phone">Phone Number *</label>
+              <div class="phone-group">
+                <select id="f_countryCode"></select>
+                <input id="f_phone" type="tel" inputmode="numeric" placeholder="10-digit mobile number" />
+              </div>
+              <div id="phoneError" class="field-error"></div>
+            </div>
+          </fieldset>
+          <div id="formMount"></div>
+        </div>
+
+        <div class="preview-panel">
+          <button type="button" id="previewFullscreenBtn" class="preview-fullscreen-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3"/></svg>
+            View full screen
+          </button>
+          <div class="preview-scale">
+            <div id="previewMount"></div>
+          </div>
+          <div id="previewNav" class="preview-nav" hidden>
+            <button type="button" id="prevPageBtn" class="preview-arrow" aria-label="Previous page">&larr;</button>
+            <div id="previewDots" class="preview-dots"></div>
+            <button type="button" id="nextPageBtn" class="preview-arrow" aria-label="Next page">&rarr;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="previewFullscreen" class="preview-fullscreen" hidden>
+    <div class="preview-fullscreen-bar">
+      <span class="preview-fullscreen-title">Preview</span>
+      <button type="button" id="previewFullscreenClose" class="preview-fullscreen-close" aria-label="Close preview">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        Close
+      </button>
+    </div>
+    <div class="preview-fullscreen-body" id="previewFullscreenBody"></div>
+  </div>
+
+  <footer class="app-footer">
+    <div class="app-footer-inner">
+      <div class="app-footer-grid">
+        <div class="app-footer-col app-footer-brand-col">
+          <div class="app-footer-brand">
+            <img src="src/assets/aananda-logo-mark.png" alt="Aananda Digital" class="app-footer-mark" />
+            <div>
+              <div class="app-footer-name">Aananda Digital</div>
+              <div class="app-footer-tag">A venture of Aananda Creations</div>
+            </div>
+          </div>
+          <p class="app-footer-blurb">
+            We help you create polished, print-ready biodatas in minutes — from traditional
+            marriage profiles to clean professional resumes, all previewed live as you type.
+          </p>
+          <div class="app-footer-social">
+            <a href="https://www.instagram.com/aananda.creation" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/share/1BmwPWZJt9/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://wa.me/919076850508" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="app-footer-col">
+          <h4 class="app-footer-heading">Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="index.html#galleryGrid">Browse Templates</a>
+          <a href="index.html#features">Features</a>
+          <a href="index.html#how-it-works">How It Works</a>
+        </div>
+
+        <div class="app-footer-col">
+          <h4 class="app-footer-heading">Categories</h4>
+          <a href="index.html?cat=Marriage#galleryGrid">Marriage Biodata</a>
+          <a href="index.html?cat=General#galleryGrid">Professional Resume</a>
+          <a href="index.html?cat=General#galleryGrid">Modern Profiles</a>
+          <a href="index.html?cat=Marriage#galleryGrid">Traditional Designs</a>
+        </div>
+
+        <div class="app-footer-col">
+          <h4 class="app-footer-heading">Legal &amp; Trust</h4>
+          <a href="legal/privacy-policy.html">Privacy Policy</a>
+          <a href="legal/terms-of-service.html">Terms of Service</a>
+          <a href="legal/refund-policy.html">Refund &amp; Cancellation</a>
+          <a href="legal/contact.html">Contact Support</a>
+          <span class="app-footer-trust">&#128274; Secure PDF Export</span>
+        </div>
+      </div>
+
+      <div class="app-footer-bottom">
+        <div class="app-footer-copy">&copy; <span id="footerYear"></span> Aananda Digital. All rights reserved.</div>
+        <button type="button" id="backToTop" class="app-footer-top-btn">Back to top &uarr;</button>
+      </div>
+    </div>
+  </footer>
+
+  <div id="overlay" class="overlay" hidden>
+    <div id="overlayText">Working…</div>
+  </div>
+
+  <script>
+    // Base URL of the deployed FastAPI backend (Railway).
+    window.BIODATA_API_BASE = "https://biodata-builder-production.up.railway.app";
+  </script>
+  <script type="module" src="src/main.js"></script>
+  <script>
+    var fy = document.getElementById("footerYear");
+    if (fy) fy.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

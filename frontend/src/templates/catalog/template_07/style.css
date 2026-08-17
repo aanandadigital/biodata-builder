@@ -1,0 +1,73 @@
+/* style.css — template_07 (Sacred Minimal). Visual skin only. */
+
+.bd-template07 {
+  position: relative;
+  width: 735px;
+  min-height: 1040px;
+  margin: 0 auto;
+  padding: 44px 50px;
+  background: #ffffff;
+  border: 14px solid #111111;
+  box-sizing: border-box;
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #111111;
+}
+
+.bd-template07 .bd07-emblem {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+.bd-template07 .bd07-motto {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 30px;
+}
+
+.bd-template07 .bd07-top-row {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 20px;
+  align-items: start;
+}
+.bd-template07 .bd07-photo-wrap { display: flex; justify-content: center; align-items: flex-start; }
+.bd-template07 .bd07-photo {
+  width: 140px;
+  height: 175px;
+  object-fit: cover;
+}
+.bd-template07 .bd07-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 13px;
+  background: #f2f2f2;
+}
+
+.bd-template07 .bd07-section-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 28px 0 12px;
+  letter-spacing: 0.01em;
+}
+
+.bd-template07 .bd07-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.bd-template07 .bd07-row {
+  display: grid;
+  grid-template-columns: 160px 14px 1fr;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.bd-template07 .bd07-label { font-weight: 400; }
+.bd-template07 .bd07-value { font-weight: 400; }
+
+@media print {
+  .bd-template07 { box-shadow: none; }
+}

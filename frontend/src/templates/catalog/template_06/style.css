@@ -1,0 +1,91 @@
+/* style.css — template_06 (Blossom Pink). Visual skin only. */
+
+.bd-template06 {
+  position: relative;
+  width: 735px;
+  min-height: 1040px;
+  margin: 0 auto;
+  padding: 44px 56px;
+  background: #fbe4ea;
+  border: 10px double #c9954f;
+  box-sizing: border-box;
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #4a3b3f;
+}
+
+.bd-template06 .bd06-icon {
+  text-align: center;
+  color: #c9954f;
+  font-size: 34px;
+  margin-bottom: 6px;
+}
+.bd-template06 .bd06-invocation {
+  text-align: center;
+  color: #a8703f;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 26px;
+}
+
+.bd-template06 .bd06-top-row {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 20px;
+  align-items: start;
+}
+.bd-template06 .bd06-photo-wrap { display: flex; justify-content: center; align-items: flex-start; }
+.bd-template06 .bd06-photo {
+  width: 140px;
+  height: 175px;
+  object-fit: cover;
+  border: 2px solid #c9954f;
+  border-radius: 3px;
+}
+.bd-template06 .bd06-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b98fa0;
+  font-size: 13px;
+  background: rgba(201, 149, 79, 0.12);
+}
+
+.bd-template06 .bd06-section-title {
+  color: #a8703f;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 26px 0 12px;
+  letter-spacing: 0.02em;
+}
+
+.bd-template06 .bd06-section-single {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.bd-template06 .bd06-section-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 18px;
+}
+
+/* Personal Details splits across two title-less blocks (fields beside the
+   photo, then the rest below) — without this the boundary fields collide. */
+.bd-template06 .bd06-section-single + .bd06-section-single {
+  margin-top: 6px;
+}
+
+.bd-template06 .bd06-row {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+.bd-template06 .bd06-label { color: #a8703f; font-weight: 700; }
+.bd-template06 .bd06-value { color: #4a3b3f; }
+
+@media print {
+  .bd-template06 { box-shadow: none; }
+}

@@ -1,0 +1,79 @@
+/* style.css — template_11 (Marathi Kuldaivat). Visual skin only. */
+
+.bd-template11 {
+  position: relative;
+  width: 735px;
+  min-height: 1040px;
+  margin: 0 auto;
+  padding: 40px 56px;
+  background: #fff8f0;
+  border: 5px solid #b5261f;
+  box-sizing: border-box;
+  font-family: "Noto Sans Devanagari", "Nirmala UI", "Georgia", serif;
+  color: #3a2418;
+}
+
+.bd-template11 .bd11-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.bd-template11 .bd11-header-mark {
+  color: #b5261f;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.bd-template11 .bd11-top-row {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 20px;
+  align-items: start;
+}
+.bd-template11 .bd11-photo-wrap { display: flex; justify-content: center; align-items: flex-start; }
+.bd-template11 .bd11-photo {
+  width: 140px;
+  height: 165px;
+  object-fit: cover;
+  border: 2px solid #b5261f;
+}
+.bd-template11 .bd11-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a06856;
+  font-size: 13px;
+  background: rgba(181, 38, 31, 0.08);
+}
+
+.bd-template11 .bd11-section-title {
+  color: #b5261f;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 22px 0 10px;
+  border-bottom: 1px solid #e0b98f;
+  padding-bottom: 6px;
+}
+
+.bd-template11 .bd11-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Personal Details splits across two title-less blocks (fields beside the
+   photo, then the rest below) — without this the boundary fields collide. */
+.bd-template11 .bd11-top-row + .bd11-section {
+  margin-top: 6px;
+}
+.bd-template11 .bd11-row {
+  display: grid;
+  grid-template-columns: 160px 14px 1fr;
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+.bd-template11 .bd11-label { font-weight: 700; color: #6b3a1f; }
+.bd-template11 .bd11-value { color: #3a2418; }
+
+@media print {
+  .bd-template11 { box-shadow: none; }
+}

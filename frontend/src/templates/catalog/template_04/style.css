@@ -1,0 +1,92 @@
+/* style.css — template_04 (Navy & Gold). Visual skin only. */
+
+.bd-template04 {
+  position: relative;
+  width: 735px;
+  min-height: 1040px;
+  margin: 0 auto;
+  padding: 44px 56px;
+  background: #1b2947;
+  border: 10px solid #c9a24b;
+  box-sizing: border-box;
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #e9ecf5;
+}
+
+.bd-template04 .bd04-icon {
+  text-align: center;
+  color: #c9a24b;
+  font-size: 34px;
+  margin-bottom: 6px;
+}
+.bd-template04 .bd04-invocation {
+  text-align: center;
+  color: #c9a24b;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 26px;
+}
+
+.bd-template04 .bd04-top-row {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 20px;
+  align-items: start;
+}
+.bd-template04 .bd04-photo-wrap { display: flex; justify-content: center; align-items: flex-start; }
+.bd-template04 .bd04-photo {
+  width: 140px;
+  height: 175px;
+  object-fit: cover;
+  border: 2px solid #c9a24b;
+  border-radius: 3px;
+}
+.bd-template04 .bd04-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9aa4c2;
+  font-size: 13px;
+  background: rgba(201, 162, 75, 0.1);
+}
+
+.bd-template04 .bd04-section-title {
+  color: #c9a24b;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 26px 0 12px;
+  letter-spacing: 0.02em;
+}
+
+.bd-template04 .bd04-section-single {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.bd-template04 .bd04-section-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 18px;
+}
+
+/* Personal Details is split across two title-less blocks (fields 1-8 beside
+   the photo, the rest below) — without a gap between them the last field of
+   the first block collides visually with the first field of the second. */
+.bd-template04 .bd04-section-single + .bd04-section-single {
+  margin-top: 6px;
+}
+
+.bd-template04 .bd04-row {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+.bd-template04 .bd04-label { color: #c9a24b; font-weight: 700; }
+.bd-template04 .bd04-value { color: #f2f4fa; }
+
+@media print {
+  .bd-template04 { box-shadow: none; }
+}

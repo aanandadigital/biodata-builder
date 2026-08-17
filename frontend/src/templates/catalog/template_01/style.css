@@ -1,0 +1,201 @@
+/* style.css — template_01 (Uttarakhand Aipan Art — Vasudhara / Aipan Bel) */
+
+.bd-template01 {
+  position: relative;
+  width: 735px;
+  min-height: 1040px;
+  margin: 0 auto;
+  background: #fdf6ec; /* Cream ground to match the leafy vine border */
+  padding: 32px;
+  box-sizing: border-box;
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #3a1c14;
+  overflow: hidden;
+}
+
+/* ---- Aipan Bel / Vasudhara border strips ---- */
+.bd-template01 .bd-edge {
+  position: absolute;
+  z-index: 1;
+}
+.bd-template01 .bd-edge-top,
+.bd-template01 .bd-edge-bottom {
+  left: 32px;
+  right: 32px;
+  height: 32px;
+  background-repeat: repeat-x;
+  background-size: 100px 32px;
+}
+.bd-template01 .bd-edge-left,
+.bd-template01 .bd-edge-right {
+  top: 32px;
+  bottom: 32px;
+  width: 32px;
+  background-repeat: repeat-y;
+  background-size: 32px 100px;
+}
+.bd-template01 .bd-edge-top { top: 0; }
+.bd-template01 .bd-edge-bottom { bottom: 0; }
+.bd-template01 .bd-edge-left { left: 0; }
+.bd-template01 .bd-edge-right { right: 0; }
+
+/* Horizontal blossom-vine tile: cream ground, rust frame lines, wavy
+   stem, bigger clean 5-petal flowers with bullseye centers, paired
+   leaves between blooms, repeats every 100px */
+.bd-template01 .bd-edge-top,
+.bd-template01 .bd-edge-bottom {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 32'%3E%3Crect width='100' height='32' fill='%23fdf6ec'/%3E%3Crect x='0' y='0' width='100' height='2' fill='%238a4a2a'/%3E%3Crect x='0' y='30' width='100' height='2' fill='%238a4a2a'/%3E%3Cpath d='M0,16 Q25,13 50,16 Q75,19 100,16' stroke='%238a4a2a' stroke-width='1.3' fill='none'/%3E%3Cdefs%3E%3Cpath id='pt' d='M0,-1 C2.6,-2.4 3.2,-6 1.6,-9.2 C0.8,-10.4 -0.8,-10.4 -1.6,-9.2 C-3.2,-6 -2.6,-2.4 0,-1 Z'/%3E%3Cg id='fl'%3E%3Cg fill='%238a4a2a'%3E%3Cuse xlink:href='%23pt' href='%23pt' transform='rotate(0)'/%3E%3Cuse xlink:href='%23pt' href='%23pt' transform='rotate(72)'/%3E%3Cuse xlink:href='%23pt' href='%23pt' transform='rotate(144)'/%3E%3Cuse xlink:href='%23pt' href='%23pt' transform='rotate(216)'/%3E%3Cuse xlink:href='%23pt' href='%23pt' transform='rotate(288)'/%3E%3C/g%3E%3Ccircle r='1.9' fill='%23fdf6ec'/%3E%3Ccircle r='1.9' fill='none' stroke='%238a4a2a' stroke-width='0.55'/%3E%3C/g%3E%3Cpath id='lf' d='M0,0 C2.6,-2.6 2.9,-7.2 0,-11.6 C-2.9,-7.2 -2.6,-2.6 0,0 Z'/%3E%3C/defs%3E%3Cuse xlink:href='%23fl' href='%23fl' transform='translate(25,13) rotate(-90) scale(0.9)'/%3E%3Cuse xlink:href='%23fl' href='%23fl' transform='translate(75,19) rotate(90) scale(0.9)'/%3E%3Cuse xlink:href='%23lf' href='%23lf' transform='translate(50,16) rotate(-145) scale(0.85)' fill='%238a4a2a'/%3E%3Cuse xlink:href='%23lf' href='%23lf' transform='translate(50,16) rotate(35) scale(0.85)' fill='%238a4a2a'/%3E%3C/svg%3E");
+}
+.bd-template01 .bd-edge-bottom {
+  transform: scaleY(-1);
+}
+
+/* Vertical blossom-vine tile — same motif turned 90°, repeats every 100px */
+.bd-template01 .bd-edge-left,
+.bd-template01 .bd-edge-right {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 32 100'%3E%3Crect width='32' height='100' fill='%23fdf6ec'/%3E%3Crect x='0' y='0' width='2' height='100' fill='%238a4a2a'/%3E%3Crect x='30' y='0' width='2' height='100' fill='%238a4a2a'/%3E%3Cpath d='M16,0 Q13,25 16,50 Q19,75 16,100' stroke='%238a4a2a' stroke-width='1.3' fill='none'/%3E%3Cdefs%3E%3Cpath id='pt' d='M0,-1 C2.6,-2.4 3.2,-6 1.6,-9.2 C0.8,-10.4 -0.8,-10.4 -1.6,-9.2 C-3.2,-6 -2.6,-2.4 0,-1 Z'/%3E%3Cg id='fl'%3E%3Cg fill='%238a4a2a'%3E%3Cuse xlink:href='%23pt' href='%23pt' transform='rotate(0)'/%3E%3Cuse xlink:href='%23pt' href='%23pt' transform='rotate(72)'/%3E%3Cuse xlink:href='%23pt' href='%23pt' transform='rotate(144)'/%3E%3Cuse xlink:href='%23pt' href='%23pt' transform='rotate(216)'/%3E%3Cuse xlink:href='%23pt' href='%23pt' transform='rotate(288)'/%3E%3C/g%3E%3Ccircle r='1.9' fill='%23fdf6ec'/%3E%3Ccircle r='1.9' fill='none' stroke='%238a4a2a' stroke-width='0.55'/%3E%3C/g%3E%3Cpath id='lf' d='M0,0 C2.6,-2.6 2.9,-7.2 0,-11.6 C-2.9,-7.2 -2.6,-2.6 0,0 Z'/%3E%3C/defs%3E%3Cuse xlink:href='%23fl' href='%23fl' transform='translate(13,25) scale(0.9)'/%3E%3Cuse xlink:href='%23fl' href='%23fl' transform='translate(19,75) scale(0.9)'/%3E%3Cuse xlink:href='%23lf' href='%23lf' transform='translate(16,50) rotate(-55) scale(0.85)' fill='%238a4a2a'/%3E%3Cuse xlink:href='%23lf' href='%23lf' transform='translate(16,50) rotate(235) scale(0.85)' fill='%238a4a2a'/%3E%3C/svg%3E");
+}
+.bd-template01 .bd-edge-right {
+  transform: scaleX(-1);
+}
+
+/* ---- Corner rosettes (ashtadal bindu-mandala) ---- */
+.bd-template01 .bd-corner {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+  z-index: 2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fdf6ec'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%238a4a2a' stroke-width='1'/%3E%3Ccircle cx='16' cy='16' r='2.6' fill='%238a4a2a'/%3E%3Ccircle cx='23' cy='16' r='1.8' fill='%238a4a2a'/%3E%3Ccircle cx='21' cy='21' r='1.8' fill='%238a4a2a'/%3E%3Ccircle cx='16' cy='23' r='1.8' fill='%238a4a2a'/%3E%3Ccircle cx='11' cy='21' r='1.8' fill='%238a4a2a'/%3E%3Ccircle cx='9' cy='16' r='1.8' fill='%238a4a2a'/%3E%3Ccircle cx='11' cy='11' r='1.8' fill='%238a4a2a'/%3E%3Ccircle cx='16' cy='9' r='1.8' fill='%238a4a2a'/%3E%3Ccircle cx='21' cy='11' r='1.8' fill='%238a4a2a'/%3E%3C/svg%3E");
+}
+.bd-template01 .bd-corner-tl { top: 0; left: 0; }
+.bd-template01 .bd-corner-tr { top: 0; right: 0; }
+.bd-template01 .bd-corner-bl { bottom: 0; left: 0; }
+.bd-template01 .bd-corner-br { bottom: 0; right: 0; }
+
+/* ---- Content well ---- */
+.bd-template01 .bd-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  background: #fdf6ec; /* Cream — Biswar ground for legible content */
+  border: 1.5px solid #7a2419;
+  box-sizing: border-box;
+  padding: 34px 30px 30px;
+  overflow: hidden;
+}
+
+/* Photo Section — circular frame with Aipan bindu ring */
+.bd-template01 .bd-photo-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+  margin-bottom: 26px;
+}
+
+.bd-template01 .bd-photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff8ec;
+  box-shadow: 0 0 0 3px #7a2419, 0 0 0 6px #fff8ec, 0 4px 10px rgba(0, 0, 0, 0.2);
+  outline: 3px dotted #7a2419;
+  outline-offset: 9px;
+  background: #fff8ec;
+}
+
+.bd-template01 .bd-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7a2419;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  background: #fdf6ec;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Section Titles — bindu-dot divider */
+.bd-template01 .bd-section-title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #7a2419;
+  margin: 30px auto 18px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #7a2419;
+  max-width: 580px;
+  position: relative;
+}
+
+.bd-template01 .bd-section-title::after {
+  content: "• ● •";
+  position: absolute;
+  bottom: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fdf6ec;
+  padding: 0 10px;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: #7a2419;
+}
+
+.bd-template01 .bd-section-title:first-of-type {
+  margin-top: 4px;
+}
+
+/* Data Layout */
+.bd-template01 .bd-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 580px;
+  margin: 0 auto 22px;
+}
+
+.bd-template01 .bd-row {
+  display: grid;
+  grid-template-columns: 180px 20px 1fr;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 7px 10px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  border-bottom: 1px dashed #d3a084;
+}
+
+.bd-template01 .bd-row:last-child {
+  border-bottom: none;
+}
+
+.bd-template01 .bd-label {
+  font-weight: bold;
+  color: #7a2419;
+}
+
+.bd-template01 .bd-colon {
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  color: #7a2419;
+}
+
+.bd-template01 .bd-value {
+  font-weight: 500;
+  color: #2b1610;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+@media print {
+  .bd-template01 {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background-color: #fdf6ec !important;
+  }
+}

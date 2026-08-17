@@ -1,0 +1,85 @@
+/* style.css — template_09 (Sikh Sacred Gold). Visual skin only. */
+
+.bd-template09 {
+  position: relative;
+  width: 735px;
+  min-height: 1040px;
+  margin: 0 auto;
+  padding: 46px 56px;
+  background: #fdfaf2;
+  border: 6px solid #b3852c;
+  box-sizing: border-box;
+  font-family: "Georgia", "Times New Roman", serif;
+  color: #2e2a1f;
+}
+
+.bd-template09 .bd09-emblem {
+  text-align: center;
+  color: #b3852c;
+  font-size: 40px;
+  margin-bottom: 6px;
+}
+.bd-template09 .bd09-invocation {
+  text-align: center;
+  color: #16305c;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 28px;
+}
+
+.bd-template09 .bd09-top-row {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 20px;
+  align-items: start;
+}
+.bd-template09 .bd09-photo-wrap { display: flex; justify-content: center; align-items: flex-start; }
+.bd-template09 .bd09-photo {
+  width: 140px;
+  height: 170px;
+  object-fit: cover;
+  border: 2px solid #b3852c;
+  border-radius: 4px;
+}
+.bd-template09 .bd09-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a3906a;
+  font-size: 13px;
+  background: rgba(179, 133, 44, 0.1);
+}
+
+.bd-template09 .bd09-section-title {
+  color: #16305c;
+  font-size: 19px;
+  font-weight: 700;
+  margin: 26px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #b3852c;
+}
+
+.bd-template09 .bd09-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Personal Details splits across two title-less blocks (fields beside the
+   photo, then the rest below) — without this the boundary fields collide. */
+.bd-template09 .bd09-top-row + .bd09-section {
+  margin-top: 8px;
+}
+.bd-template09 .bd09-row {
+  display: grid;
+  grid-template-columns: 170px 14px 1fr;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.bd-template09 .bd09-label { font-weight: 700; color: #16305c; }
+.bd-template09 .bd09-value { color: #2e2a1f; }
+
+@media print {
+  .bd-template09 { box-shadow: none; }
+}
