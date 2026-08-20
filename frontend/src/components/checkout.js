@@ -38,7 +38,7 @@ export async function startCheckout({ email, fullName, phone, community, templat
     order_id: order.razorpay_order_id,
     amount: order.amount_paise,
     currency: order.currency,
-    name: "BiodataDraft",
+    name: "Aananda Digital",
     description: "Marriage biodata PDF download",
     prefill: { name: fullName, email, contact: phone },
     handler: function () {
