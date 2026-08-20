@@ -52,7 +52,11 @@ let canonicalPoolSaveTimer = null;
 function saveCanonicalPool() {
   clearTimeout(canonicalPoolSaveTimer);
   canonicalPoolSaveTimer = setTimeout(() => {
-    localStorage.setItem(CANONICAL_POOL_KEY, JSON.stringify(state.canonicalPool));
+    try {
+      localStorage.setItem(CANONICAL_POOL_KEY, JSON.stringify(state.canonicalPool));
+    } catch (err) {
+      console.warn("Could not save canonical pool (storage full or unavailable):", err);
+    }
   }, 300);
 }
 
@@ -77,17 +81,36 @@ export function saveDraft() {
   if (!state.templateId) return;
   clearTimeout(saveTimer);
   saveTimer = setTimeout(() => {
-    localStorage.setItem(
-      draftKey(state.templateId),
-      JSON.stringify({
-        formData: state.formData,
-        email: state.email,
-        fullName: state.fullName,
-        phone: state.phone,
-        countryCode: state.countryCode,
-        schema: { id: state.schema.id, photos: state.schema.photos, pages: state.schema.pages },
-      })
-    );
+    // Photo values are base64 image data and can easily be several MB each —
+    // storing them in localStorage (5-10MB total quota, shared across the
+    // whole site) reliably blows the quota once one or two photos are
+    // uploaded. Photos are already persisted properly at checkout/order time,
+    // so the draft only needs to remember non-photo answers; we skip photo
+    // field values here rather than lose the whole draft save.
+    const photoIds = new Set((state.schema.photos || []).map((p) => p.id));
+    const draftFormData = {};
+    Object.keys(state.formData).forEach((key) => {
+      if (!photoIds.has(key)) draftFormData[key] = state.formData[key];
+    });
+
+    const payload = JSON.stringify({
+      formData: draftFormData,
+      email: state.email,
+      fullName: state.fullName,
+      phone: state.phone,
+      countryCode: state.countryCode,
+      schema: { id: state.schema.id, photos: state.schema.photos, pages: state.schema.pages },
+    });
+
+    try {
+      localStorage.setItem(draftKey(state.templateId), payload);
+    } catch (err) {
+      // Quota exceeded (or storage unavailable, e.g. private browsing) —
+      // don't let a background autosave crash the app. The user's current
+      // session still has everything in memory; only the "resume later"
+      // draft is affected.
+      console.warn("Could not save draft (storage full or unavailable):", err);
+    }
   }, 300);
 }
 
