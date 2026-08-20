@@ -6,7 +6,7 @@ from app.config import get_settings
 settings = get_settings()
 
 _client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET))
-_client.set_app_details({"title": "Aananda Digital", "version": "1.0"})
+_client.set_app_details({"title": "Aananda Digital Biodata Builder", "version": "1.0"})
 
 
 class PaymentOrderError(Exception):

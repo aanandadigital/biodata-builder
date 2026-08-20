@@ -34,6 +34,8 @@ class OrderStatus(str, enum.Enum):
     COMPLETED = "completed"    # PDF ready, email sent
     FAILED = "failed"          # payment failed or PDF generation errored
     EXPIRED = "expired"        # pending order too old, abandoned checkout
+    REFUNDED = "refunded"      # refund.processed webhook confirmed the refund landed
+    DISPUTED = "disputed"      # payment.dispute.created — a chargeback is open on this order
 
 
 class Order(Base):
