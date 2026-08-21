@@ -31,6 +31,17 @@ class Settings(BaseSettings):
     RAZORPAY_KEY_SECRET: str
     RAZORPAY_WEBHOOK_SECRET: str
 
+    # ---- Pricing ----
+    # The ONLY place the price is decided. The frontend never gets to set
+    # this — it used to send amount_paise in the create-order request, but
+    # that meant anyone could tamper with the request (devtools, curl, a
+    # modified build) and pay whatever they wanted. Now the client's value
+    # is ignored entirely; this is what actually gets charged.
+    # Set to 100 (₹1) temporarily in your live .env while smoke-testing the
+    # live Razorpay keys, then change it back to your real price (and
+    # restart the backend) before sharing the link with real customers.
+    PRODUCT_PRICE_PAISE: int = 1900  # ₹19
+
     # ---- Storage (Supabase / S3-compatible) ----
     STORAGE_BUCKET: str
     STORAGE_ENDPOINT_URL: str

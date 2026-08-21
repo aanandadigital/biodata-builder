@@ -130,6 +130,22 @@ async def razorpay_webhook(
     # so "payment.failed" then "payment.captured" for the same order_id is
     # a normal, expected sequence, not a data integrity problem.
     if event_type == "payment.captured" and order.status in (OrderStatus.PENDING, OrderStatus.FAILED):
+        # Defense in depth: the amount actually captured by Razorpay should
+        # always equal what we set at order-creation time (order.amount_paise
+        # is now server-decided — see routers/orders.py — never client-set).
+        # A mismatch here would mean something upstream of this webhook was
+        # tampered with or misconfigured; either way, don't silently deliver
+        # the product on money that doesn't match what was promised.
+        captured_amount = payment_entity.get("amount")
+        if captured_amount != order.amount_paise:
+            logger.critical(
+                "AMOUNT MISMATCH on order %s: captured=%s expected=%s (payment_id=%s) — "
+                "NOT marking as paid, needs manual review in the Razorpay dashboard",
+                order.id, captured_amount, order.amount_paise, payment_entity.get("id"),
+            )
+            db.commit()
+            return {"status": "amount_mismatch"}
+
         order.status = OrderStatus.PAID
         order.razorpay_payment_id = payment_entity.get("id")
         order.paid_at = datetime.now(timezone.utc)

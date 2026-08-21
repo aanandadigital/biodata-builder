@@ -4,7 +4,14 @@
 
 import { createOrder, pollOrderStatus } from "../api.js";
 
-const AMOUNT_PAISE = window.BIODATA_AMOUNT_PAISE || 1900; // ₹19, adjust to your real price
+// NOTE: this value is cosmetic only — the backend ignores whatever amount
+// the client sends and decides the real price itself from
+// settings.PRODUCT_PRICE_PAISE (backend/app/config.py). The Razorpay widget
+// below actually opens with `order.amount_paise`, i.e. whatever the server
+// returned, not this constant. To change the real price (or test at ₹1 on
+// live keys), set PRODUCT_PRICE_PAISE in the backend's .env and restart the
+// backend — editing this number alone no longer does anything.
+const AMOUNT_PAISE = window.BIODATA_AMOUNT_PAISE || 1900; // ₹19
 const CURRENCY = "INR";
 
 export async function startCheckout({ email, fullName, phone, community, templateId, formData, schema }, overlay) {

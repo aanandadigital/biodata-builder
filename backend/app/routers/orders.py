@@ -18,13 +18,6 @@ from app.templates_registry import VALID_TEMPLATE_IDS
 router = APIRouter(prefix="/api", tags=["orders"])
 settings = get_settings()
 
-# Basic sanity bound — stops obviously wrong amounts (e.g. a client bug
-# sending amount in rupees instead of paise) from creating a bogus order.
-# Adjust to match your actual product price(s) if you ever price templates
-# differently from one another.
-MIN_AMOUNT_PAISE = 100          # ₹1
-MAX_AMOUNT_PAISE = 10_00_00     # ₹1,000
-
 
 @router.post("/create-order", response_model=OrderCreateResponse)
 def create_order(payload: OrderCreateRequest, db: Session = Depends(get_db)):
@@ -35,10 +28,14 @@ def create_order(payload: OrderCreateRequest, db: Session = Depends(get_db)):
     open Razorpay's checkout widget — actual payment confirmation only
     ever comes from the webhook, never from this endpoint or anything the
     client reports back.
-    """
-    if not (MIN_AMOUNT_PAISE <= payload.amount_paise <= MAX_AMOUNT_PAISE):
-        raise HTTPException(status_code=400, detail="Invalid amount")
 
+    Price is intentionally NOT taken from the request. It used to be
+    (payload.amount_paise), but that let anyone paying via a modified
+    frontend, devtools, or a raw curl request set their own price within
+    the old ₹1–₹1,000 sanity range. settings.PRODUCT_PRICE_PAISE is the
+    single source of truth for what gets charged; whatever the client
+    sends for amount_paise is ignored.
+    """
     if payload.template_id not in VALID_TEMPLATE_IDS:
         raise HTTPException(status_code=400, detail="Unknown template_id")
 
@@ -51,7 +48,7 @@ def create_order(payload: OrderCreateRequest, db: Session = Depends(get_db)):
         template_id=payload.template_id,
         biodata_data=payload.form_data,
         schema_snapshot=payload.schema_snapshot.model_dump() if payload.schema_snapshot else None,
-        amount_paise=payload.amount_paise,
+        amount_paise=settings.PRODUCT_PRICE_PAISE,
         currency=payload.currency,
         status=OrderStatus.PENDING,
     )
