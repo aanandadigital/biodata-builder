@@ -2,7 +2,7 @@ import { getTemplateMeta, getCategories } from "./templates/registry.js";
 import { renderGallery, setActiveCategory } from "./components/templateGallery.js";
 import { renderForm, getMissingRequiredFields } from "./components/formRenderer.js";
 import { renderPreview } from "./components/livePreview.js";
-import { startCheckout } from "./components/checkout.js";
+import { startCheckout, resumePendingOrderIfAny } from "./components/checkout.js";
 import { shareCurrentPreview } from "./components/sharePreview.js";
 import { calculateAge, findDobFieldId } from "./templates/schemaUtils.js";
 import { initBackToTop } from "./theme.js";
@@ -204,6 +204,12 @@ const overlay = {
 // Let the user tap/click the overlay to dismiss it right away, instead of
 // being forced to wait out whatever auto-hide timer the caller set.
 overlayEl.addEventListener("click", () => overlay.hide());
+
+// If the customer paid and then refreshed/reopened the tab before the order
+// finished processing, this resumes tracking that order automatically
+// instead of leaving them with no feedback and no way to check (see
+// checkout.js for the full explanation).
+resumePendingOrderIfAny(overlay);
 
 // --- Full-screen preview: on mobile the sticky top-actions bar (Back/Start
 // over/Share/Pay) eats a lot of vertical space and crowds out the actual

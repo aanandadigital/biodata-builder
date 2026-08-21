@@ -49,6 +49,23 @@ def fetch_payment(payment_id: str) -> dict:
         raise PaymentOrderError(f"Could not fetch payment {payment_id}: {exc}") from exc
 
 
+def fetch_order_payments(razorpay_order_id: str) -> dict:
+    """
+    Lists all payments made against a Razorpay order — used as a self-healing
+    fallback from GET /api/order/{id}/status (see routers/orders.py). If our
+    webhook is ever missed entirely (wrong URL, transient outage, dashboard
+    misconfiguration — exactly what happened on 21 Aug 2026), the frontend is
+    already polling this status endpoint every few seconds right after
+    checkout closes. Piggybacking a direct Razorpay lookup there means a
+    stuck order can recover WITHOUT depending on the webhook arriving at
+    all, and without needing a separate cron job/infra.
+    """
+    try:
+        return _client.order.payments(razorpay_order_id)
+    except Exception as exc:
+        raise PaymentOrderError(f"Could not fetch payments for order {razorpay_order_id}: {exc}") from exc
+
+
 def refund_payment(payment_id: str, amount_paise: int | None = None) -> dict:
     """
     Issues a refund — full refund if amount_paise is omitted, partial
